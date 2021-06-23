@@ -1,0 +1,25 @@
+{
+  "name": "monoflow",
+  "description": "a workflow utility for monorepos using yarn/npm workspaces.",
+  "version": "0.0.0",
+  "main": "index.js",
+  "workspaces": [
+    "packages/**"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KaseyPowers/monoflow.git"
+  },
+  "author": "kaseyepowers@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KaseyPowers/monoflow/issues"
+  },
+  "homepage": "https://github.com/KaseyPowers/monoflow#readme",
+  "devDependencies": {
+    "typescript": "^4.3.4"
+  }
+}

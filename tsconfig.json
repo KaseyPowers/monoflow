@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "declarationMap": true, // not sure if we will use declarations for app/library references, but seems like a good idea to default this to true everywhere
+    "declaration": true, // defaults to true with composite but putting here in case composite is removed
+    "sourceMap": true,
+    "target": "ESNext",
+    "module": "CommonJS",
+    /* 
+      TODO Consider: 
+      https://www.typescriptlang.org/tsconfig#plugins
+    */
+
+    // Strict Checks
+    "strict": true,
+
+    // Module Resolutions
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    // "typeRoots": ["src/types"], // TODO: Make sure this doesn't cause issues with the imported types
+
+    // "module": "CommonJS",
+    // Search under node_modules for non-relative imports.
+
+    // Linter Checks
+    "noFallthroughCasesInSwitch": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+
+    // Experimental
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+
+    // Advanced
+    "forceConsistentCasingInFileNames": true    
+  }
+}

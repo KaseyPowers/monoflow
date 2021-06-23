@@ -1,0 +1,18 @@
+{
+  "name": "@monoflow/get-worktree",
+  "description": "a workflow utility for monorepos, to build out the project tree",
+  "version": "0.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "kaseyepowers@gmail.com",
+  "devDependencies": {
+    "typescript": "^4.3.4"
+  },
+  "dependencies": {
+    "@types/node": "^15.12.4",
+    "globby": "^11.0.4"
+  }
+}
