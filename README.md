@@ -4,6 +4,9 @@ a workflow utility for monorepos using yarn workspaces.
 
 Each project reads in the config from package.json + a main file [monoflowrc or monofolow.config].(js|ts|yml|json)
 
+NOTE:
+have the project config merge logic just be based on directory instead of trying to figure out proper tree traversing logic
+
 NOTES:
 determine config style for project configs vs config the tool
 

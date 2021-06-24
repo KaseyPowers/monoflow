@@ -9,15 +9,15 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@monoflow/core@workspace:packages/monoflow-core"
   dependencies:
-    "@monoflow/get-worktree": "workspace:*"
+    "@monoflow/get-workspaces": "workspace:*"
     "@types/node": ^15.12.4
     typescript: ^4.3.4
   languageName: unknown
   linkType: soft
 
-"@monoflow/get-worktree@workspace:*, @monoflow/get-worktree@workspace:packages/get-worktree":
+"@monoflow/get-workspaces@workspace:*, @monoflow/get-workspaces@workspace:packages/get-workspaces":
   version: 0.0.0-use.local
-  resolution: "@monoflow/get-worktree@workspace:packages/get-worktree"
+  resolution: "@monoflow/get-workspaces@workspace:packages/get-workspaces"
   dependencies:
     "@types/node": ^15.12.4
     globby: ^11.0.4
@@ -28,20 +28,12 @@ __metadata:
 "@monoflow/test-workspace-child@workspace:packages/test-workspace/test-workspace-child":
   version: 0.0.0-use.local
   resolution: "@monoflow/test-workspace-child@workspace:packages/test-workspace/test-workspace-child"
-  dependencies:
-    "@monoflow/get-worktree": "workspace:*"
-    "@types/node": ^15.12.4
-    typescript: ^4.3.4
   languageName: unknown
   linkType: soft
 
 "@monoflow/test-workspace@workspace:packages/test-workspace":
   version: 0.0.0-use.local
   resolution: "@monoflow/test-workspace@workspace:packages/test-workspace"
-  dependencies:
-    "@monoflow/get-worktree": "workspace:*"
-    "@types/node": ^15.12.4
-    typescript: ^4.3.4
   languageName: unknown
   linkType: soft
 

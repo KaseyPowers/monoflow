@@ -15,16 +15,23 @@ interface Package {
     - worktree: the tree of workspaces
 */
 
-
 const fileName = "package.json";
 class Workspace {
-    cwd: string; // path to workspace
-    package: Package; // store the read package, so we don't need to re-read it later
-
-    workspaceCwds: Set<string>; // to store the found child paths
-
     static validWorkspaceDir(dir: string) {
         return fs.existsSync(path.join(dir, fileName));
+    }
+
+    cwd: string; // path to workspace
+    package: Package; // store the read package, so we don't need to re-read it later    
+    workspaceCwds?: string[]; // store the found child paths
+    workspaceNames?: string[]; // store the found child names
+
+    get name() {
+        return this.package.name;
+    }
+
+    toString() {
+        return `${this.name}: ${this.cwd}`;
     }
 
     constructor(cwd: string) {
@@ -33,7 +40,7 @@ class Workspace {
             throw new Error(`Workspace constructed with invalid cwd location: ${cwd}`);
         }
         this.package = JSON.parse(fs.readFileSync(path.join(cwd, fileName), 'utf8'));
-        this.workspaceCwds = new Set();
+
         this.checkWorkspaces();
     }
 
@@ -55,11 +62,18 @@ class Workspace {
         // sorting becuase why not, based this off yarn logic
         foundPaths.sort();
 
-        foundPaths.forEach(loc => {
-            if (Workspace.validWorkspaceDir(loc)) {
-                this.workspaceCwds.add(loc);
-            }
-        });
+        const cwds = foundPaths.filter(cwd => Workspace.validWorkspaceDir(cwd));
+        if (cwds.length >= 0) {
+            this.workspaceCwds = cwds;
+        }
+    }
+
+    addNames(allWorkspaces: Map<string, Workspace>) {
+        if (this.workspaceCwds) {
+            this.workspaceNames = this.workspaceCwds.map(cwd => {
+                return allWorkspaces.get(cwd)?.name || "";
+            }).filter(val => val);
+        }
     }
 }
 

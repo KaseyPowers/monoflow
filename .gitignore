@@ -9,3 +9,6 @@
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# don't track any build files
+**/dist

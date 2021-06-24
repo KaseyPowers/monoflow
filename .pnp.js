@@ -23,8 +23,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:."
       },
       {
-        "name": "@monoflow/get-worktree",
-        "reference": "workspace:packages/get-worktree"
+        "name": "@monoflow/get-workspaces",
+        "reference": "workspace:packages/get-workspaces"
       },
       {
         "name": "@monoflow/core",
@@ -43,7 +43,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     "ignorePatternData": "(^(?:\\.yarn\\/sdks(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)|$))$)",
     "fallbackExclusionList": [
       ["@monoflow/core", ["workspace:packages/monoflow-core"]],
-      ["@monoflow/get-worktree", ["workspace:packages/get-worktree"]],
+      ["@monoflow/get-workspaces", ["workspace:packages/get-workspaces"]],
       ["@monoflow/test-workspace", ["workspace:packages/test-workspace"]],
       ["@monoflow/test-workspace-child", ["workspace:packages/test-workspace/test-workspace-child"]],
       ["monoflow", ["workspace:."]]
@@ -67,18 +67,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./packages/monoflow-core/",
           "packageDependencies": [
             ["@monoflow/core", "workspace:packages/monoflow-core"],
-            ["@monoflow/get-worktree", "workspace:packages/get-worktree"],
+            ["@monoflow/get-workspaces", "workspace:packages/get-workspaces"],
             ["@types/node", "npm:15.12.4"],
             ["typescript", "patch:typescript@npm%3A4.3.4#builtin<compat/typescript>::version=4.3.4&hash=ddfc1b"]
           ],
           "linkType": "SOFT",
         }]
       ]],
-      ["@monoflow/get-worktree", [
-        ["workspace:packages/get-worktree", {
-          "packageLocation": "./packages/get-worktree/",
+      ["@monoflow/get-workspaces", [
+        ["workspace:packages/get-workspaces", {
+          "packageLocation": "./packages/get-workspaces/",
           "packageDependencies": [
-            ["@monoflow/get-worktree", "workspace:packages/get-worktree"],
+            ["@monoflow/get-workspaces", "workspace:packages/get-workspaces"],
             ["@types/node", "npm:15.12.4"],
             ["globby", "npm:11.0.4"],
             ["typescript", "patch:typescript@npm%3A4.3.4#builtin<compat/typescript>::version=4.3.4&hash=ddfc1b"]
@@ -90,10 +90,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ["workspace:packages/test-workspace", {
           "packageLocation": "./packages/test-workspace/",
           "packageDependencies": [
-            ["@monoflow/test-workspace", "workspace:packages/test-workspace"],
-            ["@monoflow/get-worktree", "workspace:packages/get-worktree"],
-            ["@types/node", "npm:15.12.4"],
-            ["typescript", "patch:typescript@npm%3A4.3.4#builtin<compat/typescript>::version=4.3.4&hash=ddfc1b"]
+            ["@monoflow/test-workspace", "workspace:packages/test-workspace"]
           ],
           "linkType": "SOFT",
         }]
@@ -102,10 +99,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ["workspace:packages/test-workspace/test-workspace-child", {
           "packageLocation": "./packages/test-workspace/test-workspace-child/",
           "packageDependencies": [
-            ["@monoflow/test-workspace-child", "workspace:packages/test-workspace/test-workspace-child"],
-            ["@monoflow/get-worktree", "workspace:packages/get-worktree"],
-            ["@types/node", "npm:15.12.4"],
-            ["typescript", "patch:typescript@npm%3A4.3.4#builtin<compat/typescript>::version=4.3.4&hash=ddfc1b"]
+            ["@monoflow/test-workspace-child", "workspace:packages/test-workspace/test-workspace-child"]
           ],
           "linkType": "SOFT",
         }]
