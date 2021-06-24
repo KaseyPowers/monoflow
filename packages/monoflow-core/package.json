@@ -9,10 +9,10 @@
   },
   "author": "kaseyepowers@gmail.com",
   "devDependencies": {
+    "@types/node": "^15.12.4",
     "typescript": "^4.3.4"
   },
   "dependencies": {
-    "@monoflow/get-workspaces": "workspace:*",
-    "@types/node": "^15.12.4"
+    "@monoflow/get-workspaces": "workspace:*"
   }
 }

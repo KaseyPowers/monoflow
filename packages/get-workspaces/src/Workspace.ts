@@ -30,8 +30,8 @@ class Workspace {
         return this.package.name;
     }
 
-    toString() {
-        return `${this.name}: ${this.cwd}`;
+    toString(): string {
+        return `${this.name} -(${this.cwd}): ${this.workspaceCwds ? (this.workspaceNames || this.workspaceCwds || []).join(", ") : "is leaf"}`;
     }
 
     constructor(cwd: string) {
@@ -68,10 +68,10 @@ class Workspace {
         }
     }
 
-    addNames(allWorkspaces: Map<string, Workspace>) {
+    addNames(allWorkspacesByCwd: Map<string, Workspace>) {
         if (this.workspaceCwds) {
             this.workspaceNames = this.workspaceCwds.map(cwd => {
-                return allWorkspaces.get(cwd)?.name || "";
+                return allWorkspacesByCwd.get(cwd)?.name || "";
             }).filter(val => val);
         }
     }

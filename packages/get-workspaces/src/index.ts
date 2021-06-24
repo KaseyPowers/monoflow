@@ -114,6 +114,11 @@ export default function getWorkspaces(intiailRoot: string = process.cwd()) {
         }
     }
 
+    // add names to workspaces for convenience:
+    for (const workspace of workspacesByCwd.values()) {
+        workspace.addNames(workspacesByCwd);
+    }
+
 
     // iterate valid workspaces to find the root path
     // assuming root is the shortest path. 
