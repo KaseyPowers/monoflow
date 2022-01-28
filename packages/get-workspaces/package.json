@@ -1,19 +1,9 @@
 {
   "name": "@monoflow/get-workspaces",
-  "description": "a workflow utility for monorepos, to build out the project tree",
+  "description": "utilities for building workspace trees",
+  "workspaces": [
+    "get-package-workspaces"
+  ],
   "version": "0.0.0",
-  "main": "dist/index.js",
-  "module": "src/index.ts",
-  "scripts": {
-    "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "kaseyepowers@gmail.com",
-  "devDependencies": {
-    "@types/node": "^15.12.4",
-    "typescript": "^4.3.4"
-  },
-  "dependencies": {
-    "globby": "^11.0.4"
-  }
+  "author": "kaseyepowers@gmail.com"
 }

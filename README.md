@@ -13,10 +13,15 @@ determine config style for project configs vs config the tool
 classes/structures
 
 Core - main thing
+collects the workflow, adds plugins, and using those runs commands/tasks/etc
 
-Command, Task, Job?
+- Command: a collection of tasks
+- Task: the steps that make up a command
 
-- Need to figure out how to modularly define things like big commands (build/start/test)
-- As well as the stuff that makes up those commands (webpack/jest/etc.)
+Plugin:
+
+- will add/confirm commands
+- add tasks
+- add configuration logic
 
 Runner/Logger/etc. - Ways to modularly define how we display output/results/etc.

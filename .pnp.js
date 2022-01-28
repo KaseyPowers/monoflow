@@ -62,6 +62,25 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "SOFT",
         }]
       ]],
+      ["@hapi/hoek", [
+        ["npm:9.2.0", {
+          "packageLocation": "./.yarn/cache/@hapi-hoek-npm-9.2.0-efd2a3831f-c68d43f3fa.zip/node_modules/@hapi/hoek/",
+          "packageDependencies": [
+            ["@hapi/hoek", "npm:9.2.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@hapi/topo", [
+        ["npm:5.0.0", {
+          "packageLocation": "./.yarn/cache/@hapi-topo-npm-5.0.0-2bfaee40f2-f92797d5ef.zip/node_modules/@hapi/topo/",
+          "packageDependencies": [
+            ["@hapi/topo", "npm:5.0.0"],
+            ["@hapi/hoek", "npm:9.2.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["@monoflow/core", [
         ["workspace:packages/monoflow-core", {
           "packageLocation": "./packages/monoflow-core/",
@@ -69,7 +88,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@monoflow/core", "workspace:packages/monoflow-core"],
             ["@monoflow/get-workspaces", "workspace:packages/get-workspaces"],
             ["@types/node", "npm:15.12.4"],
-            ["typescript", "patch:typescript@npm%3A4.3.4#builtin<compat/typescript>::version=4.3.4&hash=ddfc1b"]
+            ["@types/yaml", "npm:1.9.6"],
+            ["globby", "npm:11.0.4"],
+            ["joi", "npm:17.4.0"],
+            ["typescript", "patch:typescript@npm%3A4.3.4#builtin<compat/typescript>::version=4.3.4&hash=ddfc1b"],
+            ["yaml", "npm:1.10.2"]
           ],
           "linkType": "SOFT",
         }]
@@ -135,11 +158,49 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["@sideway/address", [
+        ["npm:4.1.2", {
+          "packageLocation": "./.yarn/cache/@sideway-address-npm-4.1.2-5e0aba9016-e5fcccb920.zip/node_modules/@sideway/address/",
+          "packageDependencies": [
+            ["@sideway/address", "npm:4.1.2"],
+            ["@hapi/hoek", "npm:9.2.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@sideway/formula", [
+        ["npm:3.0.0", {
+          "packageLocation": "./.yarn/cache/@sideway-formula-npm-3.0.0-8688cb96b6-b83ecd35fe.zip/node_modules/@sideway/formula/",
+          "packageDependencies": [
+            ["@sideway/formula", "npm:3.0.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@sideway/pinpoint", [
+        ["npm:2.0.0", {
+          "packageLocation": "./.yarn/cache/@sideway-pinpoint-npm-2.0.0-66d94e687e-e5528639ae.zip/node_modules/@sideway/pinpoint/",
+          "packageDependencies": [
+            ["@sideway/pinpoint", "npm:2.0.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["@types/node", [
         ["npm:15.12.4", {
           "packageLocation": "./.yarn/cache/@types-node-npm-15.12.4-9b6a9838ed-64b121a7e8.zip/node_modules/@types/node/",
           "packageDependencies": [
             ["@types/node", "npm:15.12.4"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@types/yaml", [
+        ["npm:1.9.6", {
+          "packageLocation": "./.yarn/cache/@types-yaml-npm-1.9.6-25a1e52ff0-ac5a1a38a6.zip/node_modules/@types/yaml/",
+          "packageDependencies": [
+            ["@types/yaml", "npm:1.9.6"],
+            ["yaml", "npm:1.10.2"]
           ],
           "linkType": "HARD",
         }]
@@ -270,6 +331,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["joi", [
+        ["npm:17.4.0", {
+          "packageLocation": "./.yarn/cache/joi-npm-17.4.0-cfd6f2d54c-2f6203d451.zip/node_modules/joi/",
+          "packageDependencies": [
+            ["joi", "npm:17.4.0"],
+            ["@hapi/hoek", "npm:9.2.0"],
+            ["@hapi/topo", "npm:5.0.0"],
+            ["@sideway/address", "npm:4.1.2"],
+            ["@sideway/formula", "npm:3.0.0"],
+            ["@sideway/pinpoint", "npm:2.0.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["merge2", [
         ["npm:1.4.1", {
           "packageLocation": "./.yarn/cache/merge2-npm-1.4.1-a2507bd06c-7ad40d8b14.zip/node_modules/merge2/",
@@ -370,6 +445,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/typescript-patch-e441ed4208-c8766e84a4.zip/node_modules/typescript/",
           "packageDependencies": [
             ["typescript", "patch:typescript@npm%3A4.3.4#builtin<compat/typescript>::version=4.3.4&hash=ddfc1b"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["yaml", [
+        ["npm:1.10.2", {
+          "packageLocation": "./.yarn/cache/yaml-npm-1.10.2-0e780aebdf-8d72062ea3.zip/node_modules/yaml/",
+          "packageDependencies": [
+            ["yaml", "npm:1.10.2"]
           ],
           "linkType": "HARD",
         }]
